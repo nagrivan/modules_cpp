@@ -6,7 +6,7 @@
 /*   By: nagrivan <nagrivan@21-school.ru>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/17 17:33:45 by nagrivan          #+#    #+#             */
-/*   Updated: 2021/11/17 17:35:26 by nagrivan         ###   ########.fr       */
+/*   Updated: 2021/11/20 15:23:22 by nagrivan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,5 +15,6 @@
 
 #include <iostream>
 #include <cctype>
+#include <string>
 
 #endif
