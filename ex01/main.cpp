@@ -1,20 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   phone_book.cpp                                     :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nagrivan <nagrivan@21-school.ru>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/17 17:32:36 by nagrivan          #+#    #+#             */
-/*   Updated: 2021/11/20 15:58:22 by nagrivan         ###   ########.fr       */
+/*   Updated: 2021/11/23 19:17:04 by nagrivan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "phone_book.hpp"
+#include "ClassPhoneBook.hpp"
 
 int	main()
 {
 	std::string command = "\0";
+	ClassPhoneBook phoneBook;
 
 	while (42)
 	{
@@ -26,13 +27,9 @@ int	main()
 			return (0);
 		}
 		else if (command == "ADD")
-		{
-			std::cout << "Let's imput a new contact!" << std::endl;
-		}
+			phoneBook.AddContact();
 		else if (command == "SEARCH")
-		{
-			std::cout << "Wait, please..." << std::endl;
-		}
+			phoneBook.SearchContact();
 		else
 			std::cout << "Invalid command!" << std::endl;
 	}

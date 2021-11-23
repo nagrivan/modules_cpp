@@ -1,13 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   search.cpp                                         :+:      :+:    :+:   */
+/*   ClassPhoneBook.cpp                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nagrivan <nagrivan@21-school.ru>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/17 17:33:10 by nagrivan          #+#    #+#             */
-/*   Updated: 2021/11/17 17:36:44 by nagrivan         ###   ########.fr       */
+/*   Created: 2021/11/23 19:11:14 by nagrivan          #+#    #+#             */
+/*   Updated: 2021/11/23 19:20:58 by nagrivan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "phone_book.hpp"
+#include "ClassPhoneBook.hpp"
+
+void	ClassPhoneBook::AddContact()
+{
+	std::cout << "Let's imput a new contact!" << std::endl;
+	std::cout << "First name:" << std::endl;
+	
+}
+
+void	ClassPhoneBook::SearchContact()
+{
+	std::cout << "Wait, please..." << std::endl;
+}
