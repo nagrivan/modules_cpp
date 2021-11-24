@@ -6,7 +6,7 @@
 /*   By: nagrivan <nagrivan@21-school.ru>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 19:11:14 by nagrivan          #+#    #+#             */
-/*   Updated: 2021/11/24 17:22:32 by nagrivan         ###   ########.fr       */
+/*   Updated: 2021/11/24 18:01:04 by nagrivan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,6 +71,15 @@ void	ClassPhoneBook::SearchContact()
 	int	index = -1;
 
 	/* Вывод списка контактов */
+	for (int i = 0; i < 41; i++)
+		std::cout << "-";
+	std::cout << "|" << std::setw(10) << "|"\
+	<< std::setw(10) << "  index  " << "|"\
+	<< std::setw(10) << "first name" << "|"\
+	<< std::setw(10) << " last name" << "|"\
+	<< std::setw(10) << " nickname " << "|" << std::endl;
+	for (int i = 0; i < 41; i++)
+		std::cout << "-";
 	
 	
 	/* Получение индекса */
