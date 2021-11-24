@@ -6,7 +6,7 @@
 /*   By: nagrivan <nagrivan@21-school.ru>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/17 17:33:45 by nagrivan          #+#    #+#             */
-/*   Updated: 2021/11/23 19:10:28 by nagrivan         ###   ########.fr       */
+/*   Updated: 2021/11/24 15:43:30 by nagrivan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,9 @@
 class ClassPhoneBook
 {
 private:
-	int		PhoneBook[8];
-	int		indexContact;
+	Contact		PhoneBook[8];
+	int			indexContact;
+	int			indexNext;
 public:
 	void	AddContact();
 	void	SearchContact();

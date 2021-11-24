@@ -6,7 +6,7 @@
 /*   By: nagrivan <nagrivan@21-school.ru>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 16:51:46 by nagrivan          #+#    #+#             */
-/*   Updated: 2021/11/23 19:06:34 by nagrivan         ###   ########.fr       */
+/*   Updated: 2021/11/24 15:14:51 by nagrivan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 #include <string>
 
-class contact
+class Contact
 {
 private:
 	std::string 	firstName;
