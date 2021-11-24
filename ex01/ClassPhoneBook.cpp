@@ -6,7 +6,7 @@
 /*   By: nagrivan <nagrivan@21-school.ru>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 19:11:14 by nagrivan          #+#    #+#             */
-/*   Updated: 2021/11/24 18:01:04 by nagrivan         ###   ########.fr       */
+/*   Updated: 2021/11/24 18:33:17 by nagrivan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ClassPhoneBook::AddContact()
 {
-	std::string EnterStr = '\0';
+	std::string EnterStr = "\0";
 
 	std::cout << "Let's imput a new contact!" << std::endl;
 
@@ -67,42 +67,45 @@ void	ClassPhoneBook::AddContact()
 
 void	ClassPhoneBook::SearchContact()
 {
-	std::string	EnterIndex = '\0';
-	int	index = -1;
+	std::string	EnterIndex = "\0";
+	// int	index = -1;
 
+	/* Проверка на наличие контактов (попробовать через статическую переменную,
+		которая увеличивается в каждом вызове конструктора */
 	/* Вывод списка контактов */
-	for (int i = 0; i < 41; i++)
+	for (int i = 0; i < 55; i++)
 		std::cout << "-";
+	std::cout << "\n";
 	std::cout << "|" << std::setw(10) << "|"\
 	<< std::setw(10) << "  index  " << "|"\
 	<< std::setw(10) << "first name" << "|"\
 	<< std::setw(10) << " last name" << "|"\
 	<< std::setw(10) << " nickname " << "|" << std::endl;
-	for (int i = 0; i < 41; i++)
+	for (int i = 0; i < 55; i++)
 		std::cout << "-";
-	
+	std::cout << "\n";
 	
 	/* Получение индекса */
-	std::cout << "Enter index contact from 0 to 7: ";
-	if (!std::getline(std::cin, EnterIndex))
-	{
-		std::cout << "Invalide Enter." << std::endl;
-		exit(1);
-	}
-	if (EnterIndex.length() == 1)
-		index = EnterIndex[0] - '0';
-	else
-	{
-		std::cout << "Invalide Index." << std::endl;
-		return ;	
-	}
+	// std::cout << "Enter index contact from 0 to 7: ";
+	// if (!std::getline(std::cin, EnterIndex))
+	// {
+	// 	std::cout << "Invalide Enter." << std::endl;
+	// 	exit(1);
+	// }
+	// if (EnterIndex.length() == 1)
+	// 	index = EnterIndex[0] - '0';
+	// else
+	// {
+	// 	std::cout << "Invalide Index." << std::endl;
+	// 	return ;	
+	// }
 	
-	std::cout << "\nWait, please...\n" << std::endl;
+	// std::cout << "\nWait, please...\n" << std::endl;
 
-	/* вывод соответствующей информации */
-	std::cout << "First Name: " << this->PhoneBook[index].getFirstName() << std::endl;
-	std::cout << "Last Name: " << this->PhoneBook[index].getLastName() << std::endl;
-	std::cout << "Nickname: " << this->PhoneBook[index].getNickname() << std::endl;
-	std::cout << "Phone Number: " << this->PhoneBook[index].getPhoneNumber() << std::endl;
-	std::cout << "Darkest Secret: " << this->PhoneBook[index].getDarkestSecret() << std::endl;
+	// /* вывод соответствующей информации */
+	// std::cout << "First Name: " << this->PhoneBook[index].getFirstName() << std::endl;
+	// std::cout << "Last Name: " << this->PhoneBook[index].getLastName() << std::endl;
+	// std::cout << "Nickname: " << this->PhoneBook[index].getNickname() << std::endl;
+	// std::cout << "Phone Number: " << this->PhoneBook[index].getPhoneNumber() << std::endl;
+	// std::cout << "Darkest Secret: " << this->PhoneBook[index].getDarkestSecret() << std::endl;
 }

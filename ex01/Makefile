@@ -1,8 +1,8 @@
 NAME	= phonebook
 
-SRCS	= main.cpp
+SRCS	= main.cpp		ClassContact.cpp		ClassPhoneBook.cpp
 
-INCLUDES	= phone_book.hpp		ClassContact.hpp
+INCLUDES	= ClassPhoneBook.hpp		ClassContact.hpp
 
 OBJS	= ${SRCS:.cpp=.o}
 
@@ -14,10 +14,10 @@ RM	= rm -rf
 
 all: $(NAME)
 
-%.o : %.cpp {INCLUDES}
+%.o : %.cpp ${INCLUDES}
 		${CPP} ${CPPFLAGS} -c $< -o $@
 
-$(NAME): ${OBJS} {INCLUDES}
+$(NAME): ${OBJS} ${INCLUDES}
 		 ${CPP} ${CPPFLAGS} ${OBJS} -o ${NAME}
 
 clean:
