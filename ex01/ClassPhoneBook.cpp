@@ -6,7 +6,7 @@
 /*   By: nagrivan <nagrivan@21-school.ru>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 19:11:14 by nagrivan          #+#    #+#             */
-/*   Updated: 2021/11/24 18:33:17 by nagrivan         ###   ########.fr       */
+/*   Updated: 2021/11/25 15:46:38 by nagrivan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ClassPhoneBook::AddContact()
 {
-	std::string EnterStr = "\0";
+	std::string EnterStr;
 
 	std::cout << "Let's imput a new contact!" << std::endl;
 
@@ -58,7 +58,7 @@ void	ClassPhoneBook::AddContact()
 	}
 	this->PhoneBook[this->indexNext].setDarkestSecret(EnterStr);
 
-	this->indexContact = indexNext;
+	this->PhoneBook[this->indexNext].setIndexContact(this->indexNext);
 	if (this->indexNext == 7)
 		this->indexNext = 0;
 	else
@@ -68,10 +68,15 @@ void	ClassPhoneBook::AddContact()
 void	ClassPhoneBook::SearchContact()
 {
 	std::string	EnterIndex = "\0";
-	// int	index = -1;
+	int	index = -1;
 
 	/* Проверка на наличие контактов (попробовать через статическую переменную,
 		которая увеличивается в каждом вызове конструктора */
+	if (this->PhoneBook[0].getIndexContact() <= 0)
+	{
+		std::cout << "\n******* NULL CONTACT *******\n" << std::endl;
+		return ;
+	}
 	/* Вывод списка контактов */
 	for (int i = 0; i < 55; i++)
 		std::cout << "-";
@@ -85,27 +90,39 @@ void	ClassPhoneBook::SearchContact()
 		std::cout << "-";
 	std::cout << "\n";
 	
-	/* Получение индекса */
-	// std::cout << "Enter index contact from 0 to 7: ";
-	// if (!std::getline(std::cin, EnterIndex))
-	// {
-	// 	std::cout << "Invalide Enter." << std::endl;
-	// 	exit(1);
-	// }
-	// if (EnterIndex.length() == 1)
-	// 	index = EnterIndex[0] - '0';
-	// else
-	// {
-	// 	std::cout << "Invalide Index." << std::endl;
-	// 	return ;	
-	// }
+	for (int i = 0; i < 8 && this->PhoneBook[i].getIndexContact() > 0; i++)
+	{
+		std::cout << "|" << std::setw(10) << "|"\
+		<< std::setw(10) << this->PhoneBook[i].getIndexContact() << "|"\
+		<< std::setw(10) << this->PhoneBook[i].getFirstName() << "|"\
+		<< std::setw(10) << this->PhoneBook[i].getLastName() << "|"\
+		<< std::setw(10) << this->PhoneBook[i].getNickname() << "|" << std::endl;
+		for (int i = 0; i < 55; i++)
+			std::cout << "-";
+		std::cout << "\n";
+	}
 	
-	// std::cout << "\nWait, please...\n" << std::endl;
+	/* Получение индекса */
+	std::cout << "Enter index contact from 1 to 8: ";
+	if (!std::getline(std::cin, EnterIndex))
+	{
+		std::cout << "Invalide Enter." << std::endl;
+		exit(1);
+	}
+	if (EnterIndex.length() == 1)
+		index = EnterIndex[0] - '0';
+	else
+	{
+		std::cout << "Invalide Index." << std::endl;
+		return ;	
+	}
+	
+	std::cout << "\nWait, please...\n" << std::endl;
 
-	// /* вывод соответствующей информации */
-	// std::cout << "First Name: " << this->PhoneBook[index].getFirstName() << std::endl;
-	// std::cout << "Last Name: " << this->PhoneBook[index].getLastName() << std::endl;
-	// std::cout << "Nickname: " << this->PhoneBook[index].getNickname() << std::endl;
-	// std::cout << "Phone Number: " << this->PhoneBook[index].getPhoneNumber() << std::endl;
-	// std::cout << "Darkest Secret: " << this->PhoneBook[index].getDarkestSecret() << std::endl;
+	/* вывод соответствующей информации */
+	std::cout << "First Name: " << this->PhoneBook[index - 1].getFirstName() << std::endl;
+	std::cout << "Last Name: " << this->PhoneBook[index - 1].getLastName() << std::endl;
+	std::cout << "Nickname: " << this->PhoneBook[index - 1].getNickname() << std::endl;
+	std::cout << "Phone Number: " << this->PhoneBook[index - 1].getPhoneNumber() << std::endl;
+	std::cout << "Darkest Secret: " << this->PhoneBook[index - 1].getDarkestSecret() << std::endl;
 }

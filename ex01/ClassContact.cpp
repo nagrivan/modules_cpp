@@ -6,7 +6,7 @@
 /*   By: nagrivan <nagrivan@21-school.ru>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 17:18:24 by nagrivan          #+#    #+#             */
-/*   Updated: 2021/11/24 15:15:40 by nagrivan         ###   ########.fr       */
+/*   Updated: 2021/11/25 15:30:19 by nagrivan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,11 @@ void	Contact::setDarkestSecret(std::string newDarkestSecret)
 	this->darkestSecret = newDarkestSecret;
 }
 
+void	Contact::setIndexContact(int index)
+{
+	this->indexContact = index + 1;
+}
+
 std::string	Contact::getFirstName(void)
 {
 	return (this->firstName);
@@ -60,4 +65,9 @@ std::string	Contact::getPhoneNumber(void)
 std::string	Contact::getDarkestSecret(void)
 {
 	return (this->darkestSecret);
+}
+
+int	Contact::getIndexContact(void)
+{
+	return (this->indexContact);
 }
