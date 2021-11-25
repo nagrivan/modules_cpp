@@ -6,7 +6,7 @@
 /*   By: nagrivan <nagrivan@21-school.ru>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 19:11:14 by nagrivan          #+#    #+#             */
-/*   Updated: 2021/11/25 15:58:23 by nagrivan         ###   ########.fr       */
+/*   Updated: 2021/11/25 16:37:12 by nagrivan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,15 @@ void	ClassPhoneBook::AddContact()
 		this->indexNext++;
 }
 
+std::string	ClassPhoneBook::TrimStr(std::string str)
+{
+	std::string	StrResult = str;
+
+	if (str.size() > 10)
+		StrResult = StrResult.substr(0, 9).append(".");
+	return (StrResult);
+}
+
 void	ClassPhoneBook::SearchContact()
 {
 	std::string	EnterIndex = "\0";
@@ -89,14 +98,15 @@ void	ClassPhoneBook::SearchContact()
 	for (int i = 0; i < 55; i++)
 		std::cout << "-";
 	std::cout << "\n";
-	
+
 	for (int i = 0; i < 8 && this->PhoneBook[i].getIndexContact() > 0; i++)
 	{
 		std::cout << "|" << std::setw(10) << "|"\
 		<< std::setw(10) << this->PhoneBook[i].getIndexContact() << "|"\
-		<< std::setw(10) << this->PhoneBook[i].getFirstName() << "|"\
-		<< std::setw(10) << this->PhoneBook[i].getLastName() << "|"\
-		<< std::setw(10) << this->PhoneBook[i].getNickname() << "|" << std::endl;
+		<< std::setw(10) << this->TrimStr(PhoneBook[i].getFirstName()) << "|"\
+		<< std::setw(10) << this->TrimStr(PhoneBook[i].getLastName()) << "|"\
+		<< std::setw(10) << this->TrimStr(PhoneBook[i].getNickname()) << "|"\
+		<< std::endl;
 		for (int i = 0; i < 55; i++)
 			std::cout << "-";
 		std::cout << "\n";
