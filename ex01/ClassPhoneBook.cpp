@@ -6,7 +6,7 @@
 /*   By: nagrivan <nagrivan@21-school.ru>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 19:11:14 by nagrivan          #+#    #+#             */
-/*   Updated: 2021/11/25 15:46:38 by nagrivan         ###   ########.fr       */
+/*   Updated: 2021/11/25 15:58:23 by nagrivan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -120,9 +120,17 @@ void	ClassPhoneBook::SearchContact()
 	std::cout << "\nWait, please...\n" << std::endl;
 
 	/* вывод соответствующей информации */
-	std::cout << "First Name: " << this->PhoneBook[index - 1].getFirstName() << std::endl;
-	std::cout << "Last Name: " << this->PhoneBook[index - 1].getLastName() << std::endl;
-	std::cout << "Nickname: " << this->PhoneBook[index - 1].getNickname() << std::endl;
-	std::cout << "Phone Number: " << this->PhoneBook[index - 1].getPhoneNumber() << std::endl;
-	std::cout << "Darkest Secret: " << this->PhoneBook[index - 1].getDarkestSecret() << std::endl;
+	if (this->PhoneBook[index - 1].getIndexContact() <= 0)
+	{
+		std::cout << "\n******* ERROR 404 *******\n" << std::endl;
+		std::cout << "Contact whis index '" << index << "' is not found!\n" << std::endl;
+	}
+	else
+	{
+		std::cout << "First Name: " << this->PhoneBook[index - 1].getFirstName() << std::endl;
+		std::cout << "Last Name: " << this->PhoneBook[index - 1].getLastName() << std::endl;
+		std::cout << "Nickname: " << this->PhoneBook[index - 1].getNickname() << std::endl;
+		std::cout << "Phone Number: " << this->PhoneBook[index - 1].getPhoneNumber() << std::endl;
+		std::cout << "Darkest Secret: " << this->PhoneBook[index - 1].getDarkestSecret() << std::endl;
+	}
 }
