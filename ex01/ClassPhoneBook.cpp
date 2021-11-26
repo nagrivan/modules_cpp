@@ -6,7 +6,7 @@
 /*   By: nagrivan <nagrivan@21-school.ru>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 19:11:14 by nagrivan          #+#    #+#             */
-/*   Updated: 2021/11/25 16:37:12 by nagrivan         ###   ########.fr       */
+/*   Updated: 2021/11/26 15:57:40 by nagrivan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	ClassPhoneBook::AddContact()
 {
 	std::string EnterStr;
 
-	std::cout << "Let's imput a new contact!" << std::endl;
+	std::cout << "\nLet's imput a new contact!\n" << std::endl;
 
 	std::cout << "Enter First Name: ";
 	if (!std::getline(std::cin, EnterStr))
@@ -113,7 +113,7 @@ void	ClassPhoneBook::SearchContact()
 	}
 	
 	/* Получение индекса */
-	std::cout << "Enter index contact from 1 to 8: ";
+	std::cout << "\nEnter index contact from 1 to 8: ";
 	if (!std::getline(std::cin, EnterIndex))
 	{
 		std::cout << "Invalide Enter." << std::endl;
@@ -123,7 +123,7 @@ void	ClassPhoneBook::SearchContact()
 		index = EnterIndex[0] - '0';
 	else
 	{
-		std::cout << "Invalide Index." << std::endl;
+		std::cout << "\nI said 'Enter index contact from 1 to 8'!\n" << std::endl;
 		return ;	
 	}
 	

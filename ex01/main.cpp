@@ -6,7 +6,7 @@
 /*   By: nagrivan <nagrivan@21-school.ru>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/17 17:32:36 by nagrivan          #+#    #+#             */
-/*   Updated: 2021/11/25 14:48:49 by nagrivan         ###   ########.fr       */
+/*   Updated: 2021/11/26 15:52:28 by nagrivan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,8 @@ int	main()
 
 	while (42)
 	{
-		std::cout << "Please, imput command: [ADD], [SEARCH], [EXIT]" << std::endl;
-		// std::cin >> command;
-		// std::cin.ignore(32767, '\n');
+		std::cout << "Please, imput command: [ADD], [SEARCH], [EXIT]"\
+			<< std::endl;
 		std::getline(std::cin, command);
 		if (command == "EXIT")
 		{
@@ -33,7 +32,8 @@ int	main()
 		else if (command == "SEARCH")
 			phoneBook.SearchContact();
 		else
-			std::cout << "Invalid command!" << std::endl;
+			std::cout << "\nI know only 3 commands: [ADD], [SEARCH], [EXIT]!\n"\
+				<< std::endl;
 	}
 	return (0);
 }
