@@ -6,7 +6,7 @@
 /*   By: nagrivan <nagrivan@21-school.ru>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/17 17:33:45 by nagrivan          #+#    #+#             */
-/*   Updated: 2021/11/25 16:10:34 by nagrivan         ###   ########.fr       */
+/*   Updated: 2021/11/26 15:45:03 by nagrivan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,13 @@
 class ClassPhoneBook
 {
 private:
-	Contact		PhoneBook[8];
 	int			indexNext;
+	Contact		PhoneBook[8];
 	std::string	TrimStr(std::string str);
 
 public:
+	ClassPhoneBook() : indexNext(0) {}
+	~ClassPhoneBook() {}
 	void	AddContact();
 	void	SearchContact();
 };

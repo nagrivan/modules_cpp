@@ -6,7 +6,7 @@
 /*   By: nagrivan <nagrivan@21-school.ru>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 16:51:46 by nagrivan          #+#    #+#             */
-/*   Updated: 2021/11/25 15:27:23 by nagrivan         ###   ########.fr       */
+/*   Updated: 2021/11/26 15:44:53 by nagrivan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,12 @@ private:
 	std::string 	phoneNumber;
 	std::string 	darkestSecret;
 	int				indexContact;
-	
+
 public:
+	Contact()
+		: firstName("\0"), lastName("\0"), nickname("\0"), phoneNumber("\0")
+		, darkestSecret("\0"), indexContact(0) {}
+	~Contact() {}
 	void			setFirstName(std::string newFirstName);
 	void			setLastName(std::string newLastName);
 	void			setNickname(std::string newNickname);
