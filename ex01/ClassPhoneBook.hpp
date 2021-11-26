@@ -6,7 +6,7 @@
 /*   By: nagrivan <nagrivan@21-school.ru>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/17 17:33:45 by nagrivan          #+#    #+#             */
-/*   Updated: 2021/11/26 15:45:03 by nagrivan         ###   ########.fr       */
+/*   Updated: 2021/11/26 17:12:40 by nagrivan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,10 @@ private:
 	int			indexNext;
 	Contact		PhoneBook[8];
 	std::string	TrimStr(std::string str);
+	std::string	Enter(void);
+	void		HorisontLine(void);
+	void		TableHeader(void);
+	void		TableContact(void);
 
 public:
 	ClassPhoneBook() : indexNext(0) {}
