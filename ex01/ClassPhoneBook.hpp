@@ -6,7 +6,7 @@
 /*   By: nagrivan <nagrivan@21-school.ru>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/17 17:33:45 by nagrivan          #+#    #+#             */
-/*   Updated: 2021/11/26 17:12:40 by nagrivan         ###   ########.fr       */
+/*   Updated: 2021/11/30 14:22:49 by nagrivan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,8 @@ private:
 	void		HorisontLine(void);
 	void		TableHeader(void);
 	void		TableContact(void);
+	int			GettingIndex(void);
+	void		ResultSearch(int index);
 
 public:
 	ClassPhoneBook() : indexNext(0) {}

@@ -6,13 +6,11 @@
 /*   By: nagrivan <nagrivan@21-school.ru>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 19:11:14 by nagrivan          #+#    #+#             */
-/*   Updated: 2021/11/26 17:13:53 by nagrivan         ###   ########.fr       */
+/*   Updated: 2021/11/30 14:42:37 by nagrivan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClassPhoneBook.hpp"
-
-/* Вспомогательные функции можно засунуть в приватные, основные в публичное */
 
 std::string	ClassPhoneBook::Enter(void)
 {
@@ -99,39 +97,28 @@ void	ClassPhoneBook::TableContact(void)
 	}
 }
 
-void	ClassPhoneBook::SearchContact()
+int		ClassPhoneBook::GettingIndex(void)
 {
 	std::string	EnterIndex = "\0";
-	int	index = -1;
-
-	/* Проверка на наличие контактов (попробовать через статическую переменную,
-		которая увеличивается в каждом вызове конструктора */
-	if (this->PhoneBook[0].getIndexContact() <= 0)
-	{
-		std::cout << "\n******* NULL CONTACT *******\n" << std::endl;
-		return ;
-	}
-	/* Вывод списка контактов */
-	this->TableHeader();
-	this->TableContact();
+	int	ResultIndex = -1;
 	
-	/* Получение индекса */
 	std::cout << "\nEnter index contact from 1 to 8: ";
 	EnterIndex = this->Enter();
 	if (EnterIndex.length() == 1)
-		index = EnterIndex[0] - '0';
-	else
+		ResultIndex = EnterIndex[0] - '0';
+	if (EnterIndex.length() != 1 || ResultIndex > 8 || ResultIndex < 1)
 	{
-		std::cout << "\nI said 'Enter index contact from 1 to 8'!\n" << std::endl;
-		return ;	
+		std::cout << "\nI said from 1 to 8!\n" << std::endl;
+		return (-1);
 	}
-	
-	std::cout << "\nWait, please...\n" << std::endl;
+	return (ResultIndex);
+}
 
-	/* вывод соответствующей информации */
+void	ClassPhoneBook::ResultSearch(int index)
+{
 	if (this->PhoneBook[index - 1].getIndexContact() <= 0)
 	{
-		std::cout << "\n******* ERROR 404 *******\n" << std::endl;
+		std::cout << "******* ERROR 404 *******" << std::endl;
 		std::cout << "Contact whis index '" << index << "' is not found!\n" << std::endl;
 	}
 	else
@@ -142,4 +129,23 @@ void	ClassPhoneBook::SearchContact()
 		std::cout << "Phone Number: " << this->PhoneBook[index - 1].getPhoneNumber() << std::endl;
 		std::cout << "Darkest Secret: " << this->PhoneBook[index - 1].getDarkestSecret() << std::endl;
 	}
+}
+
+void	ClassPhoneBook::SearchContact()
+{
+	int	index = -1;
+
+	if (this->PhoneBook[0].getIndexContact() <= 0)
+	{
+		std::cout << "\n******* NULL CONTACT *******\n" << std::endl;
+		return ;
+	}
+	this->TableHeader();
+	this->TableContact();
+
+	index = this->GettingIndex();
+	if (index == -1)
+		return ;
+	std::cout << "\nWait, please...\n" << std::endl;
+	this->ResultSearch(index);
 }
