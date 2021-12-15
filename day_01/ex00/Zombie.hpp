@@ -6,7 +6,7 @@
 /*   By: nagrivan <nagrivan@21-school.ru>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/30 15:33:21 by nagrivan          #+#    #+#             */
-/*   Updated: 2021/12/01 17:51:02 by nagrivan         ###   ########.fr       */
+/*   Updated: 2021/12/15 12:50:11 by nagrivan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,15 @@ class Zombie
 private:
 	std::string NameZombie;
 public:
-	Zombie(std::string name = "name");
+	Zombie(std::string name = "name")
+	{
+		this->NameZombie = name;
+	}
 	~Zombie();
 	void	announce(void);
 	Zombie*	newZombie(std::string name);
 	void	randomChump(std::string name);
+	std::string getNameZombie(void);
 };
 
 #endif
