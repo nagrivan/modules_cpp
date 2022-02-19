@@ -1,8 +1,8 @@
-NAME	= phonebook
+NAME	= account
 
-SRCS	= main.cpp		ClassContact.cpp		ClassPhoneBook.cpp
+SRCS	= test.cpp		Account.cpp
 
-INCLUDES	= ClassPhoneBook.hpp		ClassContact.hpp
+INCLUDES	= Account.hpp
 
 OBJS	= ${SRCS:.cpp=.o}
 
